@@ -23,6 +23,7 @@ void UOpenDoor::BeginPlay()
 	Super::BeginPlay();
 	//Find the owning actor
 	Owner = GetOwner();
+	GetTotalMassOfActorsOnPlate();
 }
 
 void UOpenDoor::OpenDoor()
@@ -65,6 +66,15 @@ float UOpenDoor::GetTotalMassOfActorsOnPlate()
 	PressurePlate->GetOverlappingActors(OUT OverlappingActors);
 
 	// Iterate through them adding their masses 
+
+
+	for (const auto& Act : OverlappingActors)
+	{
+		
+		TotalMass += Act->FindComponentByClass<UPrimitiveComponent>()->GetMass();
+		UE_LOG(LogTemp, Warning, TEXT("Found %s"), *Act->GetName());
+
+	}
 
 	return TotalMass;
 }

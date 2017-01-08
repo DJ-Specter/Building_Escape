@@ -20,6 +20,11 @@ void UGrabber::BeginPlay()
 	Super::BeginPlay();
 	FindPhysicsHandleComponent();
 	SetupInputComponent();
+	
+	//Find the pawn 
+
+	//Set the Physics collision rotation lock
+
 }
 
 // Called every frame
