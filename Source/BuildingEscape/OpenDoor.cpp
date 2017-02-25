@@ -41,7 +41,10 @@ void UOpenDoor::CloseDoor()
 void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
+	if (!Owner) {
+		UE_LOG(LogTemp, Error, TEXT("%s missing Owner"), *GetOwner()->GetName());
+		return;
+	}
 	//Poll the Trigger Volume
 	if (GetTotalMassOfActorsOnPlate() > 50.f) // TODO make into a parameter
 	{
@@ -60,13 +63,15 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 float UOpenDoor::GetTotalMassOfActorsOnPlate()
 {
 	float TotalMass = 0.f;
-
+	if (!PressurePlate) { 
+		UE_LOG(LogTemp, Error, TEXT("%s missing PressurePlate"), *GetOwner()->GetName());
+		return TotalMass;
+	}	
 	// Find all the overlapping Actors
 	TArray<AActor*> OverlappingActors;
 	PressurePlate->GetOverlappingActors(OUT OverlappingActors);
 
 	// Iterate through them adding their masses 
-
 
 	for (const auto& Act : OverlappingActors)
 	{
