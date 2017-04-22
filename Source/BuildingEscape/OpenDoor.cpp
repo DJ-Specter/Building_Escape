@@ -38,7 +38,7 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 	//Poll the Trigger Volume
 	if (GetTotalMassOfActorsOnPlate() > TriggerMass)
 	{
-		//UE_LOG(LogTemp, Warning, TEXT("Trigger Activated"));
+		UE_LOG(LogTemp, Warning, TEXT("Trigger Activated"));
 
 		OnOpen.Broadcast();
 	}
@@ -48,6 +48,7 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 		OnClose.Broadcast();
 	}
 }
+
 float UOpenDoor::GetTotalMassOfActorsOnPlate()
 {
 	float TotalMass = 0.f;
