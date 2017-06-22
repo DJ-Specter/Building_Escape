@@ -29,6 +29,8 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FDoorEvent OnClose;
 
+
+
 private:
 	UPROPERTY(EditAnywhere)
 	float TriggerMass = 30.f;
