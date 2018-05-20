@@ -1,0 +1,10 @@
+Project files could not be generated. Log output:
+
+Running C:/Program Files/Epic Games/UE_4.19/Engine/Binaries/DotNET/UnrealBuildTool.exe  -projectfiles -project="F:/Unreal/BuildingEscape 4.19 - 2/BuildingEscape.uproject" -game -rocket -progress
+Discovering modules, targets and source code for project...
+While compiling F:\Unreal\BuildingEscape 4.19 - 2\Intermediate\Build\BuildRules\BuildingEscapeModuleRules.dll:
+ERROR: f:\Unreal\BuildingEscape 4.19 - 2\Source\BuildingEscape.Target.cs(19,12) : error CS0122: 'UnrealBuildTool.UEBuildBinaryConfiguration' is inaccessible due to its protection level
+ERROR: f:\Unreal\BuildingEscape 4.19 - 2\Source\BuildingEscape.Target.cs(17,23) : error CS0051: Inconsistent accessibility: parameter type 'ref System.Collections.Generic.List<UnrealBuildTool.UEBuildBinaryConfiguration>' is less accessible than method 'BuildingEscapeTarget.SetupBinaries(UnrealBuildTool.TargetInfo, ref System.Collections.Generic.List<UnrealBuildTool.UEBuildBinaryConfiguration>, ref System.Collections.Generic.List<string>)'
+ERROR: f:\Unreal\BuildingEscape 4.19 - 2\Source\BuildingEscapeEditor.Target.cs(19,12) : error CS0122: 'UnrealBuildTool.UEBuildBinaryConfiguration' is inaccessible due to its protection level
+ERROR: f:\Unreal\BuildingEscape 4.19 - 2\Source\BuildingEscapeEditor.Target.cs(17,23) : error CS0051: Inconsistent accessibility: parameter type 'ref System.Collections.Generic.List<UnrealBuildTool.UEBuildBinaryConfiguration>' is less accessible than method 'BuildingEscapeEditorTarget.SetupBinaries(UnrealBuildTool.TargetInfo, ref System.Collections.Generic.List<UnrealBuildTool.UEBuildBinaryConfiguration>, ref System.Collections.Generic.List<string>)'
+ERROR: UnrealBuildTool Exception: Unable to compile source files.
